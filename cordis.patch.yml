@@ -1,0 +1,9 @@
+# dsh-pause —— 挂载声明
+# 与 dsh-tool-mcsrc 的 patch 同构：只声明 id 与 name，不给 config。
+#
+# ★ 为什么不留 config 段：上一版这里写了 config.trigger，而新版插件的 Config 里没有这个键，
+#   严格校验下会导致插件加载失败 —— 而失败只写在启动它的终端里（不落盘），
+#   表现出来就是"装好了、界面上什么都没有"。默认值够用，就不写 config。
+- insert:
+    - id: dsh-pause
+      name: dsh-pause
